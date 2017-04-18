@@ -75,9 +75,9 @@
     <div id="flavorDIV">
       <h3>Pick your dominant flavor</h3>
       <!-- Dominant flavor buttons -->
-      <button class="button1" type="button" value="sweet" id="sweet">Sweet</button>
-      <button class="button1" type="button" value="sour" id="sour">Sour</button>
-      <button class="button1" type="button" value="salty" id="salty">Salty</button>
+      <button class="button" type="button" value="sweet" id="sweet">Sweet</button>
+      <button class="button" type="button" value="sour" id="sour">Sour</button>
+      <button class="button" type="button" value="salty" id="salty">Salty</button>
     </div>
     <br><br>
 
@@ -324,20 +324,32 @@
     }
     </script>
 
-    <!--need to possible make refresh button?-->
     <h3>Or let us make one for you</h3>
     <input type="button" value="I'm Feeling Lucky" id="lucky"/><br><br>
 
+    <div id="refresh">
+      <button class="button" type="button" value="reload" id="reload">Click here to make another</button></br></br>
+    </div>
+
   </form>
 
+  <script>
+  document.getElementById("refresh").style.display = "none";
+  document.getElementById("reload").onclick = function(){
+    window.location.reload();
+  }
+  </script>
+
   <div id="output">
-    <p id ="namecocktail"></p>
-    <p id="garnish"></p>
-    <p id ="recipe"></p>
-    <p id = "extrainfo"></p>
+
+    <b>Your Cocktail</b><p id ="namecocktail"></p>
+    <b>Garnish</b><p id="garnish"></p>
+    <b>Recipe</b><p id ="recipe"></p>
+    <b>Fun Fact</b><p id = "extrainfo"></p>
   </div>
 
   <script>
+  document.getElementById("output").style.display = "none";
   //Processing the extradata file
   //JSON parsing code came from https://laracasts.com/discuss/channels/general-discussion/load-json-file-from-javascript
   var cocktailData;
@@ -360,7 +372,9 @@
       loadJSON("extradata.json", function(response){
         cocktailData = JSON.parse(response);
 
+        document.getElementById("refresh").style.display = "unset";
         document.getElementById("done").disabled = "true";
+        document.getElementById("output").style.display = "unset";
 
         var chooseNum;
         var double = false;
@@ -459,11 +473,13 @@
          cocktailData = JSON.parse(response);
 
          //disable all buttons when clicked
+         document.getElementById("output").style.display = "unset";
          document.getElementById("done").disabled = "true";
          document.getElementById("lucky").disabled = "true";
          bases.forEach(function(d){
            document.getElementById(d).disabled = "true";
          })
+         document.getElementById("refresh").style.display = "unset";
 
          var random = Math.floor(Math.random() * (cocktailData.length-1));
 
