@@ -1,8 +1,8 @@
 [
   {
-    "cocktail name": "BLACK RUSSIAN",
+    "cocktailname": "BLACK RUSSIAN",
     "garnish": "",
-    "base": "Vodka",
+    "base": "vodka",
     "parts1": 5,
     "ingredients1": "Vodka",
     "parts2": 2,
@@ -24,9 +24,9 @@
     "extra": "This cocktail pairs with anything that goes with Coffee, from bran muffins to donuts."
   },
   {
-    "cocktail name": "BLOODY MARY",
+    "cocktailname": "BLOODY MARY",
     "garnish": "celery and lemon wedge",
-    "base": "Vodka",
+    "base": "vodka",
     "parts1": 4.5,
     "ingredients1": "Vodka",
     "parts2": 9,
@@ -48,9 +48,9 @@
     "extra": "Try pairing this with bacon wrapped scallops, or deep fried mac and cheese. Bonus: many people say it's a hangover cure."
   },
   {
-    "cocktail name": "COSMOPOLITAN",
+    "cocktailname": "COSMOPOLITAN",
     "garnish": "lime slice",
-    "base": "Vodka",
+    "base": "vodka",
     "parts1": 4,
     "ingredients1": "Citron Vodka",
     "parts2": 1.5,
@@ -72,9 +72,9 @@
     "extra": "Try pairing this with baked brie and crackers, or fried mozzerella"
   },
   {
-    "cocktail name": "CUBA LIBRE",
+    "cocktailname": "CUBA LIBRE",
     "garnish": "lime wedge",
-    "base": "Rum",
+    "base": "rum",
     "parts1": 5,
     "ingredients1": "White Rum",
     "parts2": 12,
@@ -96,9 +96,9 @@
     "extra": "Invented in Cuba, it pairs best with Cuban food, Canape"
   },
   {
-    "cocktail name": "Dry MARTINI",
+    "cocktailname": "DRY MARTINI",
     "garnish": "olive",
-    "base": "Gin",
+    "base": "gin",
     "parts1": 6,
     "ingredients1": "Gin",
     "parts2": 1,
@@ -120,9 +120,9 @@
     "extra": "This pairs best with oysters, or pimiento stuffed olives."
   },
   {
-    "cocktail name": "FRENCH CONNECTION",
+    "cocktailname": "FRENCH CONNECTION",
     "garnish": "",
-    "base": "Brandy",
+    "base": "brandy",
     "parts1": 3.5,
     "ingredients1": "Cognac",
     "parts2": 3.5,
@@ -144,9 +144,9 @@
     "extra": "This dessert cocktail is best to drink after dinner, as it is a sweet dessert-like flavors can basically replace that piece of pie."
   },
   {
-    "cocktail name": "GIN FIZZ",
+    "cocktailname": "GIN FIZZ",
     "garnish": "lemon slice",
-    "base": "Gin",
+    "base": "gin",
     "parts1": 4.5,
     "ingredients1": "Gin",
     "parts2": 3,
@@ -168,9 +168,9 @@
     "extra": "Try pairing this with a veggie masala burger."
   },
   {
-    "cocktail name": "GOD FATHER",
+    "cocktailname": "GOD FATHER",
     "garnish": "",
-    "base": "Whiskey",
+    "base": "whiskey",
     "parts1": 3.5,
     "ingredients1": "Scotch",
     "parts2": 3.5,
@@ -192,9 +192,9 @@
     "extra": "According to Wikipedia, the amaretty brand Disaronno claims the drink was the favorite cocktail of Marlon Brando, known for his portrayal of the titular character in The Godfather"
   },
   {
-    "cocktail name": "HARVEY WALLBANGER",
+    "cocktailname": "HARVEY WALLBANGER",
     "garnish": "Orange slices and cherry",
-    "base": "Brandy",
+    "base": "brandy",
     "parts1": 4.5,
     "ingredients1": "Vodka",
     "parts2": 1.5,
@@ -216,9 +216,9 @@
     "extra": "This drink was one of the most popular and oriGinal party drinks in the 1970's."
   },
   {
-    "cocktail name": "HORSES NECK",
+    "cocktailname": "HORSES NECK",
     "garnish": "rind of one lemon spiral",
-    "base": "Brandy",
+    "base": "brandy",
     "parts1": 4,
     "ingredients1": "Cognac",
     "parts2": 12,
@@ -240,9 +240,9 @@
     "extra": "This drink oriGinated as a non-alcoholic drink so is perfect for parties where not everyone is trying to get a buzz."
   },
   {
-    "cocktail name": "LONG ISLAND ICED TEA",
+    "cocktailname": "LONG ISLAND ICED TEA",
     "garnish": "lemon spiral",
-    "base": "Gin",
+    "base": "gin",
     "parts1": 1.5,
     "ingredients1": "Tequila",
     "parts2": 1.5,
@@ -264,9 +264,9 @@
     "extra": "Created in the US, this drink pairs best with an all-American meal of a cheeseburger, hot dog, wings, or steak."
   },
   {
-    "cocktail name": "MAI-TAI",
+    "cocktailname": "MAI-TAI",
     "garnish": "Pineapple spear, mint leaves and lime peel",
-    "base": "Rum",
+    "base": "rum",
     "parts1": 4,
     "ingredients1": "White Rum",
     "parts2": 2,
@@ -288,9 +288,9 @@
     "extra": "The Brooklyn restaurant Maison Premiere has reinvented this drink so it pairs perfectly with the seafood and raw bar dishes that come out of the kitchen."
   },
   {
-    "cocktail name": "MANHATTAN",
+    "cocktailname": "MANHATTAN",
     "garnish": "cocktail cherry",
-    "base": "Whiskey",
+    "base": "whiskey",
     "parts1": 5,
     "ingredients1": "Rye Whiskey",
     "parts2": 2,
@@ -312,9 +312,9 @@
     "extra": "Being a very straightforward cocktail, try pairing this with a complex dish such as an herb-crusted rack of lamb."
   },
   {
-    "cocktail name": "MARGARITA",
+    "cocktailname": "MARGARITA",
     "garnish": "",
-    "base": "Tequila",
+    "base": "tequila",
     "parts1": 3.5,
     "ingredients1": "Tequila",
     "parts2": 2,
@@ -336,9 +336,9 @@
     "extra": "A favorite on Cinco de Mayo, a margarita always pairs well with a nice plate of nachos."
   },
   {
-    "cocktail name": "MOJITO",
+    "cocktailname": "MOJITO",
     "garnish": "spring of mint leaves and lemon slice.",
-    "base": "Rum",
+    "base": "rum",
     "parts1": 4,
     "ingredients1": "White Cuban Rum",
     "parts2": 3,
@@ -360,9 +360,9 @@
     "extra": "This summery drink is nicely complimented with fried plantains, a Cuban dish that compliments the mint flavors"
   },
   {
-    "cocktail name": "MOSCOW MULE",
+    "cocktailname": "MOSCOW MULE",
     "garnish": "lime slice",
-    "base": "Vodka",
+    "base": "vodka",
     "parts1": 4.5,
     "ingredients1": "Vodka",
     "parts2": 12,
@@ -384,9 +384,9 @@
     "extra": "Usually served in a copper mug,  this drink is a perfect pair with happy hour salty snacks, from mixed nuts or olives to a smoked trout spread."
   },
   {
-    "cocktail name": "NEGRONI",
+    "cocktailname": "NEGRONI",
     "garnish": "half Orange slice",
-    "base": "Gin",
+    "base": "gin",
     "parts1": 3,
     "ingredients1": "Gin",
     "parts2": 3,
@@ -408,9 +408,9 @@
     "extra": "Other than beer and pizza, negroni's and hard cheese are said to be one of the best pairings of food and alcohol."
   },
   {
-    "cocktail name": "OLD FASHIONED",
+    "cocktailname": "OLD FASHIONED",
     "garnish": "Orange slice and a cocktail cherry",
-    "base": "Whiskey",
+    "base": "whiskey",
     "parts1": 4.5,
     "ingredients1": "Whiskey",
     "parts2": 2,
@@ -432,9 +432,9 @@
     "extra": "The modern Old Fashioned is much sweeter than the old fashioned said to be around during prohibition that \"put hairs on chest.\" So if you opt for an old Old Fasioned, pairing it with an ultra fatty dish is recommended. Craigie on Main in Cambridge, MA serves a pig's head for two that is loaded with all of the fat you need to compliment this cocktail."
   },
   {
-    "cocktail name": "SCREWDRIVER",
+    "cocktailname": "SCREWDRIVER",
     "garnish": "Orange slice",
-    "base": "Vodka",
+    "base": "vodka",
     "parts1": 5,
     "ingredients1": "Vodka",
     "parts2": 10,
@@ -456,9 +456,9 @@
     "extra": "This simple drink goes great with simple Popped Rice Squares - like Rice Krispies or rice cakes."
   },
   {
-    "cocktail name": "SIDECAR",
+    "cocktailname": "SIDECAR",
     "garnish": "",
-    "base": "Brandy",
+    "base": "brandy",
     "parts1": 5,
     "ingredients1": "Cognac",
     "parts2": 2,
@@ -480,9 +480,9 @@
     "extra": "If you make this with apple Brandy, try pairing with a grilled romaine salad with bacon, apple, and vinaigrette."
   },
   {
-    "cocktail name": "SINGAPORE SLING",
+    "cocktailname": "SINGAPORE SLING",
     "garnish": "Pineapple and cocktail cherry",
-    "base": "Gin",
+    "base": "gin",
     "parts1": 3,
     "ingredients1": "Gin",
     "parts2": 1.5,
@@ -501,12 +501,12 @@
     "ingredients8": "",
     "flavor1": "sour",
     "flavor2": "bitter",
-    "extra": "Created in Singapore as the name suggests, this drink is given out for free when flying to Singapore on Singapore Airlines."
+    "extra": "Created in Singapore as the cocktailname suggests, this drink is given out for free when flying to Singapore on Singapore Airlines."
   },
   {
-    "cocktail name": "STINGER",
+    "cocktailname": "STINGER",
     "garnish": "",
-    "base": "Brandy",
+    "base": "brandy",
     "parts1": 5,
     "ingredients1": "Cognac",
     "parts2": 2,
@@ -528,9 +528,9 @@
     "extra": "During its peak popularity, this cocktail was consideRed the ideal nightcap in New York City. It has also been featuRed in many popular culture shows, and most recently in an episode of Family Guy."
   },
   {
-    "cocktail name": "TEQUILA SUNRISE",
+    "cocktailname": "TEQUILA SUNRISE",
     "garnish": "",
-    "base": "Tequila",
+    "base": "tequila",
     "parts1": 4.5,
     "ingredients1": "Tequila",
     "parts2": 1.5,
@@ -549,6 +549,6 @@
     "ingredients8": "",
     "flavor1": "sour",
     "flavor2": "bitter",
-    "extra": "Getting it's name after the sunrise that it resembles once mixed, this pairs best with spicy things, so try a burger with green chile on it."
+    "extra": "Getting it's cocktailname after the sunrise that it resembles once mixed, this pairs best with spicy things, so try a burger with green chile on it."
   }
 ]

@@ -29,6 +29,7 @@
     var showFlavor = false;
     var showFlavor2 = false;
     var showStrength = false;
+    var showSubmit = false;
 
     var bases = ["vodka", "rum", "gin", "brandy", "whiskey", "tequila"];
     var base = "";
@@ -51,6 +52,8 @@
             bases.forEach(function(d){
               document.getElementById(d).disabled = "true";
             })
+
+            document.getElementById("lucky").disabled = "true";
         }
 
         //show the next choices
@@ -60,6 +63,9 @@
           document.getElementById("salty").style.display = "none";
         }
         if (base == "tequila"){
+          document.getElementById("salty").style.display = "none";
+        }
+        if (base == "vodka"){
           document.getElementById("salty").style.display = "none";
         }
     }
@@ -117,13 +123,6 @@
           document.getElementById("sour2").style.display = "none";
           document.getElementById("salty2").style.display = "none";
           document.getElementById("bitter").style.display = "none";
-          document.getElementById("savory").style.display = "none";
-        }
-        else if (base == "vodka" && flavor == "salty"){
-          document.getElementById("sweet2").style.display = "none";
-          document.getElementById("salty2").style.display = "none";
-          document.getElementById("bitter").style.display = "none";
-          document.getElementById("spicy").style.display = "none";
           document.getElementById("savory").style.display = "none";
         }
         if (base == "rum" && flavor == "sweet"){
@@ -307,37 +306,41 @@
             })
         }
 
-        //get an object that contains a finished drink for processing
-        finishedDrink.push({
-          "base": base,
-          "flavor1": flavor,
-          "flavor2": flavor2NoNum,
-          "strength": strength
-        });
-
-        finished = true;
+        document.getElementById("finishedDIV").style.display = "unset";
+        showSubmit = true;
     }
 
     </script>
 
     <div id="finishedDIV">
-    <input type="submit" name="submit" value="Make me a cocktail!"/></div>
+    <input type="button" value="Make me a cocktail!" id="done"/></div>
     <br><br>
 
     <script>
-    document.getElementById("finishedDIV").style.display = "none";
+    if(!showSubmit){
+      document.getElementById("finishedDIV").style.display = "none";
+    }else{
+      document.getElementById("finishedDIV").style.display = "unset";
+    }
     </script>
 
-    <input type="submit" name="lucky" value="I'm Feeling Lucky"/><br><br>
+    <!--need to possible make refresh button?-->
+    <h3>Or let us make one for you</h3>
+    <input type="button" value="I'm Feeling Lucky" id="lucky"/><br><br>
 
   </form>
+
+  <div id="output">
+    <p id ="namecocktail"></p>
+    <p id="garnish"></p>
+    <p id ="recipe"></p>
+    <p id = "extrainfo"></p>
+  </div>
 
   <script>
   //Processing the extradata file
   //JSON parsing code came from https://laracasts.com/discuss/channels/general-discussion/load-json-file-from-javascript
   var cocktailData;
-  var finishedDrink = [];
-  var finished = false;
 
   function loadJSON(file, callback) {
 
@@ -353,19 +356,183 @@
       xobj.send(null);
    }
 
-  loadJSON("extradata.json", function(response){
-    cocktailData = JSON.parse(response);
-  })
+   document.getElementById("done").onclick = function(){
+      loadJSON("extradata.json", function(response){
+        cocktailData = JSON.parse(response);
 
-  // function calculate(strength){
-  //   if(strength == "mild"){
-  //
-  //   }else if (strength == "strong"){
-  //
-  //   }else{
-  //
-  //   }
-  // }
+        document.getElementById("done").disabled = "true";
+
+        var chooseNum;
+        var double = false;
+        if (base == "vodka" && flavor == "sour" && flavor2NoNum == "sweet"){
+          //two options here, choose between
+          chooseNum = Math.floor(Math.random() * 2) + 1;
+          double = true;
+        }
+
+        //setting the drink variable
+        var drink = "";
+        var i = 0;
+        if (double){
+          //have to specify which drink to display
+          if (chooseNum == 1){
+            //moscow mule
+            drink = cocktailData[15];
+          }else if (chooseNum == 2){
+            //screwdriver
+            drink = cocktailData[18];
+          }
+        }else {
+          while (i < cocktailData.length){
+            if (cocktailData[i].base == base && cocktailData[i].flavor1 == flavor && cocktailData[i].flavor2 == flavor2NoNum){
+              drink = cocktailData[i];
+              i = i + 1;
+            }else{
+              i = i + 1;
+            }
+          }
+        }
+
+        //increasing or decreasing amount of alcohol depending on strength selected
+        if(strength == "mild"){
+          drink.parts1 = drink.parts1 * .5;
+          if(drink.cocktailname == ("BLACK RUSSIAN" || "COSMOPOLITAN" || "DRY MARTINI" || "FRENCH CONNECTION" || "GOD FATHER" || "HARVEY WALLBANGER" || "MARGARITA" || "OLD FASHIONED" || "SIDECAR" || "STINGER")){
+            drink.parts2 = drink.parts2 * .5;
+          }else if (drink.cocktailname == ("MAI-TAI" || "MANHATTAN" || "NEGRONI" || "SINGAPORE SLING")){
+            drink.parts2 = drink.parts2 * .5;
+            drink.parts3 = drink.parts3 * .5;
+          }else if(drink.cocktailname == "LONG ISLAND ICED TEA"){
+            drink.parts2 = drink.parts2 * .5;
+            drink.parts3 = drink.parts3 * .5;
+            drink.parts4 = drink.parts4 * .5;
+            drink.parts5 = drink.parts5 * .5;
+          }
+        }else if (strength == "strong"){
+          drink.parts1 = drink.parts1 * 1.5;
+          if(drink.cocktailname == ("BLACK RUSSIAN" || "COSMOPOLITAN" || "DRY MARTINI" || "FRENCH CONNECTION" || "GOD FATHER" || "HARVEY WALLBANGER" || "MARGARITA" || "OLD FASHIONED" || "SIDECAR" || "STINGER")){
+            drink.parts2 = drink.parts2 * 1.5;
+          }else if (drink.cocktailname == ("MAI-TAI" || "MANHATTAN" || "NEGRONI" || "SINGAPORE SLING")){
+            drink.parts2 = drink.parts2 * 1.5;
+            drink.parts3 = drink.parts3 * 1.5;
+          }else if(drink.cocktailname == "LONG ISLAND ICED TEA"){
+            drink.parts2 = drink.parts2 * 1.5;
+            drink.parts3 = drink.parts3 * 1.5;
+            drink.parts4 = drink.parts4 * 1.5;
+            drink.parts5 = drink.parts5 * 1.5;
+        }
+      }
+
+      var recipe = [];
+      recipe[0] = drink.parts1 + " parts of " + drink.ingredients1;
+      if (drink.parts2 != ""){
+        recipe[1] = " " + drink.parts2 + " parts of " + drink.ingredients2;
+      }
+      if (drink.parts3 != ""){
+        recipe[2] = " " + drink.parts3 + " parts of " + drink.ingredients3;
+      }
+      if (drink.parts4 != ""){
+        recipe[3] = " " + drink.parts4 + " parts of " + drink.ingredients4;
+      }
+      if (drink.parts5 != ""){
+        recipe[4] = " " + drink.parts5 + " parts of " + drink.ingredients5;
+      }
+      if (drink.parts6 != ""){
+        recipe[5] = " " + drink.parts6 + " parts of " + drink.ingredients6;
+      }
+      if (drink.parts7 != ""){
+        recipe[6] = " " + drink.parts7 + " parts of " + drink.ingredients7;
+      }
+      if (drink.parts8 != ""){
+        recipe[7] = " " + drink.parts8 + " parts of " + drink.ingredients8;
+      }
+
+      //just have to display drink now
+      document.getElementById("namecocktail").innerHTML = drink.cocktailname;
+      document.getElementById("garnish").innerHTML = drink.garnish;
+      document.getElementById("recipe").innerHTML = recipe;
+      document.getElementById("extrainfo").innerHTML = drink.extra;
+      })
+    }
+
+    document.getElementById("lucky").onclick = function(){
+       loadJSON("extradata.json", function(response){
+         cocktailData = JSON.parse(response);
+
+         //disable all buttons when clicked
+         document.getElementById("done").disabled = "true";
+         document.getElementById("lucky").disabled = "true";
+         bases.forEach(function(d){
+           document.getElementById(d).disabled = "true";
+         })
+
+         var random = Math.floor(Math.random() * (cocktailData.length-1));
+
+         var randomStrength = Math.floor(Math.random() * (strength.length -1));
+
+         var strength2 = strength[randomStrength];
+
+         var drink = cocktailData[random];
+
+
+         if(strength2 == "mild"){
+           drink.parts1 = drink.parts1 * .5;
+           if(drink.cocktailname == ("BLACK RUSSIAN" || "COSMOPOLITAN" || "DRY MARTINI" || "FRENCH CONNECTION" || "GOD FATHER" || "HARVEY WALLBANGER" || "MARGARITA" || "OLD FASHIONED" || "SIDECAR" || "STINGER")){
+             drink.parts2 = drink.parts2 * .5;
+           }else if (drink.cocktailname == ("MAI-TAI" || "MANHATTAN" || "NEGRONI" || "SINGAPORE SLING")){
+             drink.parts2 = drink.parts2 * .5;
+             drink.parts3 = drink.parts3 * .5;
+           }else if(drink.cocktailname == "LONG ISLAND ICED TEA"){
+             drink.parts2 = drink.parts2 * .5;
+             drink.parts3 = drink.parts3 * .5;
+             drink.parts4 = drink.parts4 * .5;
+             drink.parts5 = drink.parts5 * .5;
+           }
+         }else if (strength2 == "strong"){
+           drink.parts1 = drink.parts1 * 1.5;
+           if(drink.cocktailname == ("BLACK RUSSIAN" || "COSMOPOLITAN" || "DRY MARTINI" || "FRENCH CONNECTION" || "GOD FATHER" || "HARVEY WALLBANGER" || "MARGARITA" || "OLD FASHIONED" || "SIDECAR" || "STINGER")){
+             drink.parts2 = drink.parts2 * 1.5;
+           }else if (drink.cocktailname == ("MAI-TAI" || "MANHATTAN" || "NEGRONI" || "SINGAPORE SLING")){
+             drink.parts2 = drink.parts2 * 1.5;
+             drink.parts3 = drink.parts3 * 1.5;
+           }else if(drink.cocktailname == "LONG ISLAND ICED TEA"){
+             drink.parts2 = drink.parts2 * 1.5;
+             drink.parts3 = drink.parts3 * 1.5;
+             drink.parts4 = drink.parts4 * 1.5;
+             drink.parts5 = drink.parts5 * 1.5;
+           }
+         }
+
+
+         var recipe = [];
+         recipe[0] = drink.parts1 + " parts of " + drink.ingredients1;
+         if (drink.parts2 != ""){
+           recipe[1] = " " + drink.parts2 + " parts of " + drink.ingredients2;
+         }
+         if (drink.parts3 != ""){
+           recipe[2] = " " + drink.parts3 + " parts of " + drink.ingredients3;
+         }
+         if (drink.parts4 != ""){
+           recipe[3] = " " + drink.parts4 + " parts of " + drink.ingredients4;
+         }
+         if (drink.parts5 != ""){
+           recipe[4] = " " + drink.parts5 + " parts of " + drink.ingredients5;
+         }
+         if (drink.parts6 != ""){
+           recipe[5] = " " + drink.parts6 + " parts of " + drink.ingredients6;
+         }
+         if (drink.parts7 != ""){
+           recipe[6] = " " + drink.parts7 + " parts of " + drink.ingredients7;
+         }
+         if (drink.parts8 != ""){
+           recipe[7] = " " + drink.parts8 + " parts of " + drink.ingredients8;
+         }
+
+         document.getElementById("namecocktail").innerHTML = drink.cocktailname;
+         document.getElementById("garnish").innerHTML = drink.garnish;
+         document.getElementById("recipe").innerHTML = recipe;
+         document.getElementById("extrainfo").innerHTML = drink.extra;
+       })
+     }
   </script>
 </body>
 </html>
