@@ -2,6 +2,7 @@
 
 <html lang="en">
 <head>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <link rel = "stylesheet" href = "style.css" type = "text/css">
   <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css">
@@ -534,5 +535,52 @@
        })
      }
   </script>
+
+  <div id="loader">
+    <div id="lemon"></div>
+    <div id="straw"></div>
+    <div id="glass">
+        <div id="cubes">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="drink"></div>
+        <span id="counter"></span>
+    </div>
+    <div id="coaster"></div>
+  </div>
+
+  <script>
+    var worker = null;
+    var loaded = 0;
+
+    function increment() {
+        $('#drink').css('top', (100-loaded*.9)+'%');
+        if(loaded==25) $('#cubes div:nth-child(1)').fadeIn(100);
+        if(loaded==50) $('#cubes div:nth-child(2)').fadeIn(100);
+        if(loaded==75) $('#cubes div:nth-child(3)').fadeIn(100);
+        if(loaded==100) {
+            $('#lemon').fadeIn(100);
+            $('#straw').fadeIn(300);
+            // stopLoading();
+            //setTimeout(startLoading, 1000);
+        }
+        else loaded++;
+    }
+
+    function startLoading() {
+        $('#loader').show();
+        worker = setInterval(increment, 30);
+    }
+
+    $('#loader').hide();
+    $('#lemon').hide();
+    $('#straw').hide();
+    $('#cubes div').hide();
+
+    $("#done").click(startLoading);
+  </script>
+
 </body>
 </html>
