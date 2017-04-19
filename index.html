@@ -406,7 +406,7 @@
           }
         }else {
           while (i < cocktailData.length){
-            if (cocktailData[i].base == base && cocktailData[i].flavor1 == flavor && cocktailData[i].flavor2 == flavor2NoNum){
+            if (cocktailData[i].base == base && cocktailData[i].flavor1 == flavor && (cocktailData[i].flavor2 == flavor2NoNum || cocktailData[i].flavor2 == "")){
               drink = cocktailData[i];
               i = i + 1;
             }else{
@@ -579,7 +579,6 @@
         //only change the color of the drink once
         if (loaded == 0) {
           $('#drink').css('background', "linear-gradient(to bottom, " + drink.color1 + ", " + drink.color2 + ")");
-          console.log(drink);
         }
         $('#drink').css('top', (100-loaded*.9)+'%');
         if(loaded==24) $('#cubes div:nth-child(1)').fadeIn(100);
