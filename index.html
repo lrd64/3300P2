@@ -4,6 +4,8 @@
 <head>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <link rel = "stylesheet" href = "style.css" type = "text/css">
+  <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css">
   <meta charset="UTF-8">
@@ -12,8 +14,8 @@
 <body>
   <h1> Cocktail Mixer </h1>
 
-  <h3>Pick your base</h3>
   <form>
+    <h3>Pick your base</h3>
     <div id="baseDIV">
     <!-- Base buttons -->
       <button class="button" type="button" value="vodka" id ="vodka">Vodka</button>
@@ -31,6 +33,7 @@
     var showFlavor2 = false;
     var showStrength = false;
     var showSubmit = false;
+    var luckyTF = false;
 
     var bases = ["vodka", "rum", "gin", "brandy", "whiskey", "tequila"];
     var base = "";
@@ -38,6 +41,7 @@
     document.getElementById("baseDIV").onclick=handler;
 
     function handler(e){
+      if (!luckyTF){
         var target = e.target || e.srcElement;
         if (target.className.match("button"))
         {
@@ -69,6 +73,7 @@
         if (base == "vodka"){
           document.getElementById("salty").style.display = "none";
         }
+      }
     }
 
     </script>
@@ -461,6 +466,10 @@
         recipe[7] = " " + drink.parts8 + " parts of " + drink.ingredients8;
       }
 
+      if (drink.garnish == ""){
+        drink.garnish = "None";
+      }
+
       //just have to display drink now
       document.getElementById("namecocktail").innerHTML = drink.cocktailname;
       document.getElementById("garnish").innerHTML = drink.garnish;
@@ -472,6 +481,13 @@
     document.getElementById("lucky").onclick = function(){
        loadJSON("extradata.json", function(response){
          cocktailData = JSON.parse(response);
+
+         luckyTF = true;
+
+         bases.forEach(function(d){
+           document.getElementById(d).style.pointerEvents = "none";
+         })
+         console.log(bases);
 
          //disable all buttons when clicked
          document.getElementById("output").style.display = "unset";
@@ -544,12 +560,17 @@
            recipe[7] = " " + drink.parts8 + " parts of " + drink.ingredients8;
          }
 
+         if(drink.garnish == ""){
+           drink.garnish = "None";
+         }
+
          document.getElementById("namecocktail").innerHTML = drink.cocktailname;
          document.getElementById("garnish").innerHTML = drink.garnish;
          document.getElementById("recipe").innerHTML = recipe;
          document.getElementById("extrainfo").innerHTML = drink.extra;
        })
      }
+      $("output").fadeIn(200);
   </script>
 
 <div id="animation">
