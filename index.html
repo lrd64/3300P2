@@ -355,6 +355,9 @@
   </div>
 
   <script>
+  //setting the drink variable
+  var drink = "";
+
   document.getElementById("output").style.display = "none";
   //Processing the extradata file
   //JSON parsing code came from https://laracasts.com/discuss/channels/general-discussion/load-json-file-from-javascript
@@ -391,8 +394,6 @@
           double = true;
         }
 
-        //setting the drink variable
-        var drink = "";
         var i = 0;
         if (double){
           //have to specify which drink to display
@@ -488,7 +489,6 @@
          bases.forEach(function(d){
            document.getElementById(d).style.pointerEvents = "none";
          })
-         console.log(bases);
 
          //disable all buttons when clicked
          document.getElementById("done").disabled = "true";
@@ -504,8 +504,7 @@
 
          var strength2 = strength[randomStrength];
 
-         var drink = cocktailData[random];
-
+         drink = cocktailData[random];
 
          if(strength2 == "mild"){
            drink.parts1 = drink.parts1 * .5;
@@ -571,6 +570,46 @@
        })
      }
       $("output").fadeIn(200);
+
+    //DRINK LOADER CODE: referenced from https://codepen.io/MarcMalignan/pen/svLux
+    var worker = null;
+    var loaded = 0;
+
+    function increment() {
+        //only change the color of the drink once
+        if (loaded == 0) {
+          $('#drink').css('background', "linear-gradient(to bottom, " + drink.color1 + ", " + drink.color2 + ")");
+          console.log(drink);
+        }
+        $('#drink').css('top', (100-loaded*.9)+'%');
+        if(loaded==24) $('#cubes div:nth-child(1)').fadeIn(100);
+        if(loaded==51) $('#cubes div:nth-child(2)').fadeIn(100);
+        if(loaded==75) $('#cubes div:nth-child(3)').fadeIn(100);
+        if(loaded==99) {
+            $('#lemon').fadeIn(100);
+            $('#straw').fadeIn(300);
+            $("#output").show();
+            stopLoading();
+        }
+        else loaded+=1.5;
+    }
+
+    function startLoading() {
+        // $('#drink').css('background', "linear-gradient(to bottom, " + drink.orange, orangered)");
+        worker = setInterval(increment, 30);
+    }
+
+    function stopLoading() {
+      clearInterval(worker);
+    }
+
+    $('#lemon').hide();
+    $('#straw').hide();
+    $('#cubes div').hide();
+
+    $("#done").click(startLoading);
+    $("#lucky").click(startLoading);
+
   </script>
 
   <div id="loader">
@@ -587,37 +626,6 @@
     </div>
     <div id="coaster"></div>
   </div>
-
-  <script>
-    var worker = null;
-    var loaded = 0;
-
-    function increment() {
-        $('#drink').css('top', (100-loaded*.9)+'%');
-        if(loaded==24) $('#cubes div:nth-child(1)').fadeIn(100);
-        if(loaded==51) $('#cubes div:nth-child(2)').fadeIn(100);
-        if(loaded==75) $('#cubes div:nth-child(3)').fadeIn(100);
-        if(loaded==99) {
-            $('#lemon').fadeIn(100);
-            $('#straw').fadeIn(300);
-            $("#output").show();
-        }
-        else loaded+=1.5;
-    }
-
-    function startLoading() {
-        $('#loader').show();
-        worker = setInterval(increment, 30);
-    }
-
-    $('#loader').hide();
-    $('#lemon').hide();
-    $('#straw').hide();
-    $('#cubes div').hide();
-
-    $("#done").click(startLoading);
-    $("#lucky").click(startLoading);
-  </script>
 
 </body>
 </html>

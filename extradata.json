@@ -21,7 +21,9 @@
     "ingredients8": "",
     "flavor1": "sweet",
     "flavor2": "bitter",
-    "extra": "This cocktail pairs with anything that goes with Coffee, from bran muffins to donuts."
+    "extra": "This cocktail pairs with anything that goes with Coffee, from bran muffins to donuts.",
+    "color1": "#48170E",
+    "color2": "#441911"
   },
   {
     "cocktailname": "BLOODY MARY",
@@ -45,7 +47,9 @@
     "ingredients8": "",
     "flavor1": "sour",
     "flavor2": "spicy",
-    "extra": "Try pairing this with bacon wrapped scallops, or deep fried mac and cheese. Bonus: many people say it's a hangover cure."
+    "extra": "Try pairing this with bacon wrapped scallops, or deep fried mac and cheese. Bonus: many people say it's a hangover cure.",
+    "color1": "#F50E07",
+    "color2": "#FA0C04"
   },
   {
     "cocktailname": "COSMOPOLITAN",
@@ -69,7 +73,9 @@
     "ingredients8": "",
     "flavor1": "sweet",
     "flavor2": "sour",
-    "extra": "Try pairing this with baked brie and crackers, or fried mozzerella"
+    "extra": "Try pairing this with baked brie and crackers, or fried mozzerella",
+    "color1": "#D82620",
+    "color2": "#DB221C"
   },
   {
     "cocktailname": "CUBA LIBRE",
@@ -93,7 +99,9 @@
     "ingredients8": "",
     "flavor1": "sweet",
     "flavor2": "bitter",
-    "extra": "Invented in Cuba, it pairs best with Cuban food, Canape"
+    "extra": "Invented in Cuba, it pairs best with Cuban food, Canape",
+    "color1": "#48170E",
+    "color2": "#441911"
   },
   {
     "cocktailname": "DRY MARTINI",
@@ -117,7 +125,9 @@
     "ingredients8": "",
     "flavor1": "salty",
     "flavor2": "savory",
-    "extra": "This pairs best with oysters, or pimiento stuffed olives."
+    "extra": "This pairs best with oysters, or pimiento stuffed olives.",
+    "color1": "#DFE79C",
+    "color2": "#E3EB9F"
   },
   {
     "cocktailname": "FRENCH CONNECTION",
@@ -141,7 +151,9 @@
     "ingredients8": "",
     "flavor1": "sweet",
     "flavor2": "bitter",
-    "extra": "This dessert cocktail is best to drink after dinner, as it is a sweet dessert-like flavors can basically replace that piece of pie."
+    "extra": "This dessert cocktail is best to drink after dinner, as it is a sweet dessert-like flavors can basically replace that piece of pie.",
+    "color1": "orange",
+    "color2": "orangered"
   },
   {
     "cocktailname": "GIN FIZZ",
@@ -165,7 +177,9 @@
     "ingredients8": "",
     "flavor1": "sour",
     "flavor2": "savory",
-    "extra": "Try pairing this with a veggie masala burger."
+    "extra": "Try pairing this with a veggie masala burger.",
+    "color1": "#DFE79C",
+    "color2": "#E3EB9F"
   },
   {
     "cocktailname": "GOD FATHER",
@@ -189,7 +203,9 @@
     "ingredients8": "",
     "flavor1": "sweet",
     "flavor2": "bitter",
-    "extra": "According to Wikipedia, the amaretty brand Disaronno claims the drink was the favorite cocktail of Marlon Brando, known for his portrayal of the titular character in The Godfather"
+    "extra": "According to Wikipedia, the amaretty brand Disaronno claims the drink was the favorite cocktail of Marlon Brando, known for his portrayal of the titular character in The Godfather",
+    "color1": "orange",
+    "color2": "orangered"
   },
   {
     "cocktailname": "HARVEY WALLBANGER",
@@ -213,7 +229,9 @@
     "ingredients8": "",
     "flavor1": "salty",
     "flavor2": "sour",
-    "extra": "This drink was one of the most popular and oriGinal party drinks in the 1970's."
+    "extra": "This drink was one of the most popular and oriGinal party drinks in the 1970's.",
+    "color1": "#EAE720",
+    "color2": "#FDF902"
   },
   {
     "cocktailname": "HORSES NECK",
@@ -237,7 +255,9 @@
     "ingredients8": "",
     "flavor1": "sour",
     "flavor2": "salty",
-    "extra": "This drink originated as a non-alcoholic drink so it is perfect for parties where not everyone is trying to get a buzz."
+    "extra": "This drink originated as a non-alcoholic drink so it is perfect for parties where not everyone is trying to get a buzz.",
+    "color1": "orange",
+    "color2": "orangered"
   },
   {
     "cocktailname": "LONG ISLAND ICED TEA",
@@ -261,7 +281,9 @@
     "ingredients8": "Cola",
     "flavor1": "sweet",
     "flavor2": "sour",
-    "extra": "Created in the US, this drink pairs best with an all-American meal of a cheeseburger, hot dog, wings, or steak."
+    "extra": "Created in the US, this drink pairs best with an all-American meal of a cheeseburger, hot dog, wings, or steak.",
+    "color1": "orange",
+    "color2": "orangered"
   },
   {
     "cocktailname": "MAI-TAI",
@@ -285,7 +307,9 @@
     "ingredients8": "",
     "flavor1": "sour",
     "flavor2": "sweet",
-    "extra": "The Brooklyn restaurant Maison Premiere has reinvented this drink so it pairs perfectly with the seafood and raw bar dishes that come out of the kitchen."
+    "extra": "The Brooklyn restaurant Maison Premiere has reinvented this drink so it pairs perfectly with the seafood and raw bar dishes that come out of the kitchen.",
+    "color1": "#D82620",
+    "color2": "#DB221C"
   },
   {
     "cocktailname": "MANHATTAN",
@@ -309,7 +333,9 @@
     "ingredients8": "",
     "flavor1": "salty",
     "flavor2": "sweet",
-    "extra": "Being a very straightforward cocktail, try pairing this with a complex dish such as an herb-crusted rack of lamb."
+    "extra": "Being a very straightforward cocktail, try pairing this with a complex dish such as an herb-crusted rack of lamb.",
+    "color1": "#BA2E2E",
+    "color2": "#D90202"
   },
   {
     "cocktailname": "MARGARITA",
@@ -333,7 +359,9 @@
     "ingredients8": "",
     "flavor1": "sweet",
     "flavor2": "sour",
-    "extra": "A favorite on Cinco de Mayo, a margarita always pairs well with a nice plate of nachos."
+    "extra": "A favorite on Cinco de Mayo, a margarita always pairs well with a nice plate of nachos.",
+    "color1": "#DFE79C",
+    "color2": "#E3EB9F"
   },
   {
     "cocktailname": "MOJITO",
@@ -357,7 +385,9 @@
     "ingredients8": "",
     "flavor1": "sour",
     "flavor2": "salty",
-    "extra": "This summery drink is nicely complimented with fried plantains, a Cuban dish that compliments the mint flavors"
+    "extra": "This summery drink is nicely complimented with fried plantains, a Cuban dish that compliments the mint flavors",
+    "color1": "#8ABE61",
+    "color2": "#71BB37"
   },
   {
     "cocktailname": "MOSCOW MULE",
@@ -381,7 +411,9 @@
     "ingredients8": "",
     "flavor1": "sour",
     "flavor2": "sweet",
-    "extra": "Usually served in a copper mug,  this drink is a perfect pair with happy hour salty snacks, from mixed nuts or olives to a smoked trout spread."
+    "extra": "Usually served in a copper mug,  this drink is a perfect pair with happy hour salty snacks, from mixed nuts or olives to a smoked trout spread.",
+    "color1": "#F3F7CB",
+    "color2": "#E0E89D"
   },
   {
     "cocktailname": "NEGRONI",
@@ -405,7 +437,9 @@
     "ingredients8": "",
     "flavor1": "salty",
     "flavor2": "sweet",
-    "extra": "Other than beer and pizza, negroni's and hard cheese are said to be one of the best pairings of food and alcohol."
+    "extra": "Other than beer and pizza, negroni's and hard cheese are said to be one of the best pairings of food and alcohol.",
+    "color1": "#EE660E",
+    "color2": "#952C07"
   },
   {
     "cocktailname": "OLD FASHIONED",
@@ -429,7 +463,9 @@
     "ingredients8": "",
     "flavor1": "sour",
     "flavor2": "sweet",
-    "extra": "The modern Old Fashioned is much sweeter than the old fashioned said to be around during prohibition that \"put hairs on chest.\" So if you opt for an old Old Fasioned, pairing it with an ultra fatty dish is recommended. Craigie on Main in Cambridge, MA serves a pig's head for two that is loaded with all of the fat you need to compliment this cocktail."
+    "extra": "The modern Old Fashioned is much sweeter than the old fashioned said to be around during prohibition that \"put hairs on chest.\" So if you opt for an old Old Fasioned, pairing it with an ultra fatty dish is recommended. Craigie on Main in Cambridge, MA serves a pig's head for two that is loaded with all of the fat you need to compliment this cocktail.",
+    "color1": "orange",
+    "color2": "orangered"
   },
   {
     "cocktailname": "SCREWDRIVER",
@@ -453,7 +489,9 @@
     "ingredients8": "",
     "flavor1": "sour",
     "flavor2": "sweet",
-    "extra": "This simple drink goes great with simple Popped Rice Squares - like Rice Krispies or rice cakes."
+    "extra": "This simple drink goes great with simple Popped Rice Squares - like Rice Krispies or rice cakes.",
+    "color1": "#EAE720",
+    "color2": "#FDF902"
   },
   {
     "cocktailname": "SIDECAR",
@@ -477,7 +515,9 @@
     "ingredients8": "",
     "flavor1": "sweet",
     "flavor2": "sour",
-    "extra": "If you make this with apple Brandy, try pairing with a grilled romaine salad with bacon, apple, and vinaigrette."
+    "extra": "If you make this with apple Brandy, try pairing with a grilled romaine salad with bacon, apple, and vinaigrette.",
+    "color1": "orange",
+    "color2": "orangered"
   },
   {
     "cocktailname": "SINGAPORE SLING",
@@ -501,7 +541,9 @@
     "ingredients8": "",
     "flavor1": "sour",
     "flavor2": "bitter",
-    "extra": "Created in Singapore as the cocktailname suggests, this drink is given out for free when flying to Singapore on Singapore Airlines."
+    "extra": "Created in Singapore as the cocktailname suggests, this drink is given out for free when flying to Singapore on Singapore Airlines.",
+    "color1": "#D12C70",
+    "color2": "#ED1133"
   },
   {
     "cocktailname": "STINGER",
@@ -525,7 +567,9 @@
     "ingredients8": "",
     "flavor1": "sweet",
     "flavor2": "",
-    "extra": "During its peak popularity, this cocktail was consideRed the ideal nightcap in New York City. It has also been featuRed in many popular culture shows, and most recently in an episode of Family Guy."
+    "extra": "During its peak popularity, this cocktail was considered the ideal nightcap in New York City. It has also been featured in many popular culture shows, and most recently in an episode of Family Guy.",
+    "color1": "#44863A",
+    "color2": "#ED1133"
   },
   {
     "cocktailname": "TEQUILA SUNRISE",
@@ -549,6 +593,8 @@
     "ingredients8": "",
     "flavor1": "sour",
     "flavor2": "bitter",
-    "extra": "Getting it's cocktailname after the sunrise that it resembles once mixed, this pairs best with spicy things, so try a burger with green chile on it."
+    "extra": "Getting it's cocktailname after the sunrise that it resembles once mixed, this pairs best with spicy things, so try a burger with green chile on it.",
+    "color1": "#FEC504",
+    "color2": "#FE1F04"
   }
 ]
