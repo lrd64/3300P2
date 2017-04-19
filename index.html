@@ -594,15 +594,15 @@
 
     function increment() {
         $('#drink').css('top', (100-loaded*.9)+'%');
-        if(loaded==25) $('#cubes div:nth-child(1)').fadeIn(100);
-        if(loaded==50) $('#cubes div:nth-child(2)').fadeIn(100);
+        if(loaded==24) $('#cubes div:nth-child(1)').fadeIn(100);
+        if(loaded==51) $('#cubes div:nth-child(2)').fadeIn(100);
         if(loaded==75) $('#cubes div:nth-child(3)').fadeIn(100);
-        if(loaded==100) {
+        if(loaded==99) {
             $('#lemon').fadeIn(100);
             $('#straw').fadeIn(300);
             $("#output").show();
         }
-        else loaded++;
+        else loaded+=1.5;
     }
 
     function startLoading() {
