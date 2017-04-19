@@ -25,7 +25,6 @@
       <button class="button" type="button" value="whiskey" id="whiskey">Whiskey</button>
       <button class="button" type="button" value="tequila" id="tequila">Tequila</button>
     </div>
-    <br><br>
 
     <script>
     //initiating vars
@@ -42,6 +41,8 @@
 
     function handler(e){
       if (!luckyTF){
+        $("#lucky").hide();
+        $("#lucky_text").hide();
         var target = e.target || e.srcElement;
         if (target.className.match("button"))
         {
@@ -85,7 +86,7 @@
       <button class="button" type="button" value="sour" id="sour">Sour</button>
       <button class="button" type="button" value="salty" id="salty">Salty</button>
     </div>
-    <br><br>
+    <br>
 
     <script>
     if(!showFlavor){
@@ -223,7 +224,7 @@
       <button class="button" type="button" value="spicy" id="spicy">Spicy</button>
       <button class="button" type="button" value="savory" id="savory">Savory</button>
     </div>
-    <br><br>
+    <br>
 
     <script>
     if(!showFlavor2){
@@ -280,7 +281,7 @@
       <button class="button" id="regular" type="button" value="regular">Regular</button>
       <button class="button" id="strong" type="button" value="strong">Strong</button>
     </div>
-    </br></br>
+    </br><br>
 
     <script>
     if(!showStrength){
@@ -320,7 +321,6 @@
 
     <div id="finishedDIV">
     <input type="button" value="Make me a cocktail!" id="done"/></div>
-    <br><br>
 
     <script>
     if(!showSubmit){
@@ -330,11 +330,12 @@
     }
     </script>
 
-    <h3>Or let us make one for you</h3>
+    <h3 id="lucky_text">Or let us make one for you</h3>
+
     <input type="button" value="I'm Feeling Lucky" id="lucky"/><br><br>
 
     <div id="refresh">
-      <button class="button" type="button" value="reload" id="reload">Click here to make another</button></br></br>
+      <button class="button" type="button" value="reload" id="reload">Click here to make another</button></br>
     </div>
 
   </form>
@@ -347,11 +348,10 @@
   </script>
 
   <div id="output">
-
-    <b>Your Cocktail</b><p id ="namecocktail"></p>
-    <b>Garnish</b><p id="garnish"></p>
-    <b>Recipe</b><p id ="recipe"></p>
-    <b>Fun Fact</b><p id = "extrainfo"></p>
+    <h3>Your Cocktail</h3><p id ="namecocktail"></p>
+    <h3>Garnish</h3><p id="garnish"></p>
+    <h3>Recipe</h3><p id ="recipe"></p>
+    <h3>Fun Fact</h3><p id = "extrainfo"></p>
   </div>
 
   <script>
@@ -375,12 +375,13 @@
    }
 
    document.getElementById("done").onclick = function(){
+      $("#output").displa
       loadJSON("extradata.json", function(response){
         cocktailData = JSON.parse(response);
 
         document.getElementById("refresh").style.display = "unset";
         document.getElementById("done").disabled = "true";
-        document.getElementById("output").style.display = "unset";
+        // document.getElementById("output").style.display = "unset";
 
         var chooseNum;
         var double = false;
@@ -490,7 +491,6 @@
          console.log(bases);
 
          //disable all buttons when clicked
-         document.getElementById("output").style.display = "unset";
          document.getElementById("done").disabled = "true";
          document.getElementById("lucky").disabled = "true";
          bases.forEach(function(d){
@@ -573,7 +573,6 @@
       $("output").fadeIn(200);
   </script>
 
-<div id="animation">
   <div id="loader">
     <div id="lemon"></div>
     <div id="straw"></div>
@@ -588,7 +587,6 @@
     </div>
     <div id="coaster"></div>
   </div>
-</div>
 
   <script>
     var worker = null;
@@ -602,8 +600,7 @@
         if(loaded==100) {
             $('#lemon').fadeIn(100);
             $('#straw').fadeIn(300);
-            // stopLoading();
-            //setTimeout(startLoading, 1000);
+            $("#output").show();
         }
         else loaded++;
     }
