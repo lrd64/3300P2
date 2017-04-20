@@ -36,7 +36,7 @@ var svg = d3.select("body").append("svg")
     .attr("width", diameter+400)
     .attr("height", diameter)
   .append("g")
-    .attr("transform", "translate(" + (radius + 100) + "," + (radius+24) + ")");/*Move diagram left / right / up / down*/
+    .attr("transform", "translate(" + (radius + 50) + "," + (radius+24) + ")");/*Move diagram left / right / up / down*/
 
 var link = svg.append("g").selectAll(".link"),
     node = svg.append("g").selectAll(".node");
@@ -156,11 +156,14 @@ function packageImports(nodes) {
 
 </script>
 </div>
-
+<div id="part1">
+  <h1 id="big">Liquor, Cocktails and More!</h1>
+  <p id="bigger">Sick of your boring old beer? Let us help! Hover over any ingredient to see what drinks it is in, or hover over any drink to see what ingredient it has. Once you're done, scroll down and let us help you pick your perfect drink. Cheers!
+</div>
 
 <!--https://bl.ocks.org/mbostock/7607999-->
 
-  <h1> Cocktail Mixer </h1>
+  <h1 id="big"> Cocktail Mixer </h1>
   <p id="description">Now that you’ve explored all of your drink options, if you know your preferences we can help you find the perfect drink. Just start by clicking your favorite alcohol base. If you don’t know your preference, click “I’m Feeling Lucky” and we’ll make a drink for you!</p>
 
   <form>
