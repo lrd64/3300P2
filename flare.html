@@ -3,12 +3,13 @@
 <style>
 
 .node {
-  font: 300 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 300 12px "Helvetica Neue", Helvetica, Arial, sans-serif;/*Adjust font*/
   fill: #bbb;
 }
 
 .node:hover {
   fill: #000;
+  font: 100 14px "Helvetica Neue", Helvetica, Arial, sans-serif;/*Adjust font when hovered on*/
 }
 
 .link {
@@ -16,12 +17,15 @@
   stroke-opacity: .4;
   fill: none;
   pointer-events: none;
-}
+}/*Normal line color*/
 
 .node:hover,
 .node--source,
 .node--target {
   font-weight: 700;
+}
+.node.ADC {
+  font:red;
 }
 
 .node--source {
@@ -29,31 +33,34 @@
 }
 
 .node--target {
-  fill: #d62728;
+  fill: #d62728; /*Changes color of targeted node font*/
 }
 
 .link--source,
 .link--target {
   stroke-opacity: 1;
   stroke-width: 2px;
-}
+}/*Line size / opacity when nodes selected*/
 
 .link--source {
-  stroke: #d62728;
+  stroke: #d62728;/*line color from ingredient to drink*/
 }
 
 .link--target {
-  stroke: #2ca02c;
+  stroke: #2ca02c;/*line color from drink to ingredient*/
 }
 
 </style>
 <body>
 <script src="//d3js.org/d3.v3.min.js"></script>
+
+
+
 <script>
 
-var diameter = 960,
+var diameter = 720,
     radius = diameter / 2,
-    innerRadius = radius - 120;
+    innerRadius = radius - 120; /*Change size of diagram*/
 
 var cluster = d3.layout.cluster()
     .size([360, innerRadius])
@@ -64,15 +71,15 @@ var bundle = d3.layout.bundle();
 
 var line = d3.svg.line.radial()
     .interpolate("bundle")
-    .tension(.85)
+    .tension(.75)
     .radius(function(d) { return d.y; })
     .angle(function(d) { return d.x / 180 * Math.PI; });
 
 var svg = d3.select("body").append("svg")
-    .attr("width", diameter)
-    .attr("height", diameter)
+    .attr("width", diameter+400)
+    .attr("height", diameter+400)
   .append("g")
-    .attr("transform", "translate(" + radius + "," + radius + ")");
+    .attr("transform", "translate(" + (radius + 100) + "," + (radius+24) + ")");/*Move diagram left / right / up / down*/
 
 var link = svg.append("g").selectAll(".link"),
     node = svg.append("g").selectAll(".node");
