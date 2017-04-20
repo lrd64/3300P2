@@ -3,13 +3,17 @@
 <style>
 
 .node {
-  font: 300 12px "Helvetica Neue", Helvetica, Arial, sans-serif;/*Adjust font*/
+  font: 300 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
   fill: #bbb;
+}
+
+body {
+  background: linear-gradient(steelblue, beige);
+
 }
 
 .node:hover {
   fill: #000;
-  font: 100 14px "Helvetica Neue", Helvetica, Arial, sans-serif;/*Adjust font when hovered on*/
 }
 
 .link {
@@ -17,15 +21,12 @@
   stroke-opacity: .4;
   fill: none;
   pointer-events: none;
-}/*Normal line color*/
+}
 
 .node:hover,
 .node--source,
 .node--target {
   font-weight: 700;
-}
-.node.ADC {
-  font:red;
 }
 
 .node--source {
@@ -33,34 +34,31 @@
 }
 
 .node--target {
-  fill: #d62728; /*Changes color of targeted node font*/
+  fill: #d62728;
 }
 
 .link--source,
 .link--target {
   stroke-opacity: 1;
   stroke-width: 2px;
-}/*Line size / opacity when nodes selected*/
+}
 
 .link--source {
-  stroke: #d62728;/*line color from ingredient to drink*/
+  stroke: #d62728;
 }
 
 .link--target {
-  stroke: #2ca02c;/*line color from drink to ingredient*/
+  stroke: #2ca02c;
 }
 
 </style>
 <body>
 <script src="//d3js.org/d3.v3.min.js"></script>
-
-
-
 <script>
 
-var diameter = 720,
+var diameter = 960,
     radius = diameter / 2,
-    innerRadius = radius - 120; /*Change size of diagram*/
+    innerRadius = radius - 120;
 
 var cluster = d3.layout.cluster()
     .size([360, innerRadius])
@@ -71,15 +69,15 @@ var bundle = d3.layout.bundle();
 
 var line = d3.svg.line.radial()
     .interpolate("bundle")
-    .tension(.75)
+    .tension(.85)
     .radius(function(d) { return d.y; })
     .angle(function(d) { return d.x / 180 * Math.PI; });
 
 var svg = d3.select("body").append("svg")
-    .attr("width", diameter+400)
-    .attr("height", diameter+400)
+    .attr("width", diameter)
+    .attr("height", diameter)
   .append("g")
-    .attr("transform", "translate(" + (radius + 100) + "," + (radius+24) + ")");/*Move diagram left / right / up / down*/
+    .attr("transform", "translate(" + radius + "," + radius + ")");
 
 var link = svg.append("g").selectAll(".link"),
     node = svg.append("g").selectAll(".node");
@@ -90,10 +88,10 @@ var nodes;
 d3.json("flare-imports.json", function(error, classes) {
   if (error) throw error;
 
-      nodes = cluster.nodes(packageHierarchy(classes)) 
+      nodes = cluster.nodes(packageHierarchy(classes))
       links = packageImports(nodes);
       //console.log(links)
-      
+
   link = link
 
 
@@ -166,7 +164,7 @@ function packageHierarchy(classes) {
     }
     //console.log(node)
     return node;
-    
+
 
   }
 
